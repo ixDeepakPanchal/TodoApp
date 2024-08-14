@@ -17,7 +17,7 @@ const InputPage = ({ handleSearchTodo, handleTypeTodo }: prop) => {
   return (
     <div className=" pt-4 ">
       <div className="flex justify-center py-4">
-        <div className="input input-info flex items-center pr-0 gap-3  w-[25%] h-[2.5rem]">
+        <div className="input input-info flex items-center pr-0   h-[2.5rem]">
           <input
             value={inputVal}
             onChange={handleOnChange}

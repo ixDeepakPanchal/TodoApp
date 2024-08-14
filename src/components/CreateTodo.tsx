@@ -1,5 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { IoMdAddCircle } from "react-icons/io";
 interface prop {
   handleAddTodo: (message: string) => void;
 }
@@ -11,9 +12,11 @@ function CreateTodo({ handleAddTodo }: prop) {
     setInputVal(event.target.value);
   };
   return (
-    <div className=" h-20 bg-current flex justify-start items-center  ">
-      <p className="text-3xl text-purple-400 font-bold mx-6">TODO APP</p>
-      <div className="flex w-[70%] justify-center items-center">
+    <div className=" max-h-20 w-screen bg-gray-800 grid grid-cols-4 items-center p-3 ">
+      <p className="text-2xl md:text-3xl text-purple-400 font-bold col-span-1 text-center">
+        TODO APP
+      </p>
+      <div className="flex col-span-2 justify-center items-center">
         <input
           value={inputVal}
           onChange={handleOnChange}
@@ -23,21 +26,20 @@ function CreateTodo({ handleAddTodo }: prop) {
         />
 
         <button
-          className="btn bg-green-500 text-white  rounded-lg shadow-lg hover:bg-green-600 "
+          className=" max-h-10 p-3 bg-green-500 text-white font-bold  rounded-lg shadow-lg hover:bg-green-600 "
           onClick={() => {
-           (!inputVal.length || /^\s*$/.test(inputVal))
+            !inputVal.length || /^\s*$/.test(inputVal)
               ? toast.error("Please enter a valid title! ", {
                   duration: 4000,
                 })
               : handleAddTodo(inputVal);
             setInputVal("");
-            console.log();
           }}
         >
-          Add
+          <IoMdAddCircle  />
         </button>
       </div>
-      <div className="avatar grow flex justify-center">
+      <div className="col-span-1 avatar grow flex justify-center">
         <div className="w-14 rounded-full">
           <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
         </div>

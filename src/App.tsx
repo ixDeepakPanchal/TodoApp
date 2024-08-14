@@ -156,7 +156,7 @@ function App() {
     setFilterType(complete);
   };
   return (
-    <>
+    <div className="w-screen">
       <Toaster position="top-right" reverseOrder={false} />
       <CreateTodo handleAddTodo={handleAddTodo}></CreateTodo>
       <InputPage
@@ -170,7 +170,7 @@ function App() {
         handleUpdateTodo={handleUpdateTodo}
       ></TodoList>
       {!loading && (
-        <div className="flex justify-center py-8">
+        <div className="grid grid-rows-1 justify-center p-6">
           <Pagination
             pageSizeOptions={[8, 16, 32, 64]}
             defaultCurrent={currentPage}
@@ -182,7 +182,7 @@ function App() {
           />
         </div>
       )}
-    </>
+    </div>
   );
 }
 

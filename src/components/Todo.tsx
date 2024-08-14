@@ -64,7 +64,7 @@ const Todo = ({ todoItem, handleDeleteTodo, handleUpdateTodo }: prop) => {
   return (
     <Space direction="vertical" size="middle">
       <div
-        className={`card w-64 flex shadow-xl shadow-gray-500 rounded-lg m-6 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 `}
+        className={`card min-w-64 flex shadow-md shadow-gray-500 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 `}
       >
         <Badge.Ribbon
           text={todoItem.completed ? "Completed" : "Pending"}
